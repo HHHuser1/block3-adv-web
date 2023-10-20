@@ -1,23 +1,6 @@
 blah blah
-<<<<<<< HEAD
-<<<<<<< HEAD
-copied the git directory to xampp and now modified the text file to see what happens
-=======
 
 
-???
->>>>>>> 2faa731 (,,,,)
-done
-
-changes here
-=======
-copied the git directory to xampp and now modified the text file to see what happens
-
-
-
-
-
-
-testing
->>>>>>> b01853e (testing)
 brrrrrr
+
+cleaned file to sync to both directories
