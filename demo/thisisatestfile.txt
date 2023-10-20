@@ -5,4 +5,4 @@ brrrrrr
 
 cleaned file to sync to both directories
 
-now pushing this files to other folder
+now pushing this file to xampp folder
