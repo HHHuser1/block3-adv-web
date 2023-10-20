@@ -2,7 +2,7 @@
 
     // echo "demo"."delta";
 
-    $phaseToTest = "sesafatascoooo...c....sata. . . . . . . ......fases";
+    $phaseToTest = "sesafatascoouyguoo...c....sata. . . . . . . ......fases";
 
     // // have 2 variables to keep track of phase forwards and backwards
     // $forwards = "";
