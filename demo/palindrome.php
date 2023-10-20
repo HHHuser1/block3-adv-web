@@ -2,7 +2,7 @@
 
     // echo "demo"."delta";
 
-    $phaseToTest = "ataco   ..cata.";
+    $phaseToTest = "seataco...cata. . . . . . . ...es";
 
     // have 2 variables to keep track of phase forwards and backwards
     $forwards = "";
@@ -39,12 +39,44 @@
 
     // compare the two new variables
     if($forwards == $backwards) {
-        return  $phaseToTest . " (is a palindrome)";
+        echo $phaseToTest . " (is a palindrome)";
     } else {
         echo $phaseToTest . " (is not a palindrome)";
     }
 
 echo "<br>";
+    // // compare from the front AND from the back simultaneously
+    // // keep track of my front index
+    // // keep track of my back index SEPARATELY
+    // // $iFront = 0;
+    // $backIndex = strlen($phaseToTest)-1;
+
+    // for($i = 0; $i < strlen($phaseToTest); $i++) {
+    //     if ($phaseToTest[$backIndex] < $phaseToTest[$i]) {
+    //         echo $phaseToTest . " (is a palindrome)";
+    //         break;
+    //     }
+    //     // while I have a space or a period, skip to the next index
+    //     while($phaseToTest[$i] == " " || $phaseToTest[$i] == ".") {
+    //         // echo " skip ";
+    //         $i++;
+    //     }
+
+    //     for($backIndex = strlen($phaseToTest)-1; $backIndex >= 0; $backIndex--) {   
+    //     while($phaseToTest[$backIndex] == " " || $phaseToTest[$backIndex] == ".") {
+    //     // echo $phaseToTest[$backIndex];
+    //     // echo " skipback ";
+    //     $backIndex--;
+    //     }
+    // }
+    //     if($phaseToTest[$i] === $phaseToTest[$backIndex]) {
+    //         echo $phaseToTest . " (is NOT a palindrome)";
+    //         break;
+    //     }
+
+    // }
+
+
     // compare from the front AND from the back simultaneously
     // keep track of my front index
     // keep track of my back index SEPARATELY
@@ -54,13 +86,15 @@ echo "<br>";
     for($i = 0; $i < strlen($phaseToTest); $i++) {
         // while I have a space or a period, skip to the next index
         while($phaseToTest[$i] == " " || $phaseToTest[$i] == ".") {
-            echo " skip ";
             $i++;
         }
-        echo $backIndex;
+        // echo $backIndex;
         $backIndex--;
 
     }
+
+
+    
 
 
 
