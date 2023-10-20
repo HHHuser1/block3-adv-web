@@ -2,7 +2,7 @@
 
     // echo "demo"."delta";
 
-    $phaseToTest = "sesafataco...cata. . . . . . . ...fases";
+    $phaseToTest = "sesafatascoooo...c....sata. . . . . . . ......fases";
 
     // // have 2 variables to keep track of phase forwards and backwards
     // $forwards = "";
@@ -84,12 +84,12 @@ echo "<br>";
     $backIndex = strlen($phaseToTest)-1;
 
     for($i = 0, $backIndex = strlen($phaseToTest)-1;
-    $i < strlen($phaseToTest); 
+    $i < strlen($phaseToTest), $backIndex >= 0; 
     $i++ , $backIndex--) {
 
         // if ($phaseToTest[$backIndex] < $phaseToTest[$i]) {
-            echo $phaseToTest . " (is a palindrome)";
-            break;
+        //     echo $phaseToTest . " (is a palindrome)";
+        //     break;
         // }
         // while I have a space or a period, skip to the next index
         while($phaseToTest[$i] == " " || $phaseToTest[$i] == ".") {
@@ -101,7 +101,7 @@ echo "<br>";
             $backIndex--;
         }
 
-        if ($phaseToTest[$backIndex] < $phaseToTest[$i]) {
+        if ([$backIndex] < [$i]) {
             echo $phaseToTest . " (is a palindrome)";
             break;
         }
