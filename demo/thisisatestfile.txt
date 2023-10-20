@@ -4,3 +4,5 @@ blah blah
 brrrrrr
 
 cleaned file to sync to both directories
+
+now pushing this files to other folder
