@@ -2,7 +2,7 @@
 
     // echo "demo"."delta";
 
-    $phaseToTest = "taco   ..cat.";
+    $phaseToTest = "ataco   ..cata.";
 
     // have 2 variables to keep track of phase forwards and backwards
     $forwards = "";
@@ -39,10 +39,12 @@
 
     // compare the two new variables
     if($forwards == $backwards) {
-        // echo "palindrome!";
+        return  $phaseToTest . " (is a palindrome)";
+    } else {
+        echo $phaseToTest . " (is not a palindrome)";
     }
 
-
+echo "<br>";
     // compare from the front AND from the back simultaneously
     // keep track of my front index
     // keep track of my back index SEPARATELY
@@ -52,9 +54,10 @@
     for($i = 0; $i < strlen($phaseToTest); $i++) {
         // while I have a space or a period, skip to the next index
         while($phaseToTest[$i] == " " || $phaseToTest[$i] == ".") {
+            echo " skip ";
             $i++;
         }
-        // echo $backIndex;
+        echo $backIndex;
         $backIndex--;
 
     }
