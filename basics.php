@@ -9,8 +9,8 @@ operators</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, expedita culpa? Aperiam, suscipit. Doloribus deserunt voluptatum autem asperiores repellendus, veritatis, deleniti tempora aliquid perspiciatis ipsa vitae aspernatur dolorum et sequi!</p>
 <?php
     ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    // ini_set('display_startup_errors', 1);
+    // error_reporting(E_ALL);
 
     $firstName = "peter";
     // echo "First Name: $firstName";
@@ -107,43 +107,4 @@ operators</p>
 
 <?php
     // create a function that checks if a sentence is a palindrome, using only basics and continue and break, REMEMBER NO STRING FUNCTIONS!!
-?>
-<?php
-
-$row = 10;
-for($i=0; $i<=$row; $i++){
-    echo "$i";
-    echo "<br>";
-}
-echo "<br>"."<br>";
-
-$rows = 5;
-for($i=0; $i<=5; $i++){
-    // for($i=0; $i<=$rows5; $i++){ <--- here we use the variable $rows we declared 
-    for($j=0; $j<=5; $j++){
-        // for($j=0; $j<=$rows; $j++){ <--- here we use the variable $rows we declared
-        
-        echo "*"." ";
-        echo "$rows"." ";
-        echo "$i"." ";
-        echo "$j"." ";
-    }
-    echo "<br>";
-}
-
-echo "<br>"."<br>";
-
-$fruits = array("apple", "banana", "orange");
-$i = 0;
-
-while ($i < count($fruits)){ 
-    // count will store the number of elements in the $fruits array, 
-    // in this case the value would be 3
-
-    echo $fruits[$i] . "<br>";
-    $i++;
-}
-
-
-
 ?>
