@@ -6,28 +6,40 @@ ini_set('display_errors', 1);
 
 class officeChair{
     private $color;
+    private $hasBackTilt;
     // public $backTilt;
     // public $wheels;
     // public $armRest;
 
     public function __construct() {
         $this->color= "red";
+        $this->hasBackTilt = "yes";
     }
 
     private function getColor() {
         return $this->color;
     }
 
+    private function getBackTilt() {
+        return $this->hasBackTilt;
+    }
+
     private function setColor($newColor) {
         $this->color = $newColor;
     }
 
-    public function ask() {
-        return "color is: " . $this->getColor();
+    private function setBackTilt($newhasBackTilt) {
+        $this->hasBackTilt = $newhasBackTilt;
     }
 
-    public function action($data) {
+    public function ask() {
+        return "color is: " . $this->getColor() .
+         " has back tilt: " . $this->getBackTilt();
+    }
+
+    public function action($data, $data2) {
         $this->setColor($data);
+        $this->setBackTilt($data2);
     }
 }
 
@@ -35,7 +47,8 @@ class officeChair{
 
 $samChair = new OfficeChair();
 
-$samChair->action("green");
+$samChair->action("green", "no");
+
 
 echo $samChair->ask();
 echo '<br>';
