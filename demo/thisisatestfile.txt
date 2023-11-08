@@ -1,8 +1,0 @@
-blah blah
-
-
-brrrrrr
-
-cleaned file to sync to both directories
-
-now pushing this file to xampp folder
