@@ -14,7 +14,7 @@ BRAND TABLE
 | 8       | Samsung     |
 
 
-PartType Table:
+PartType TABLE:
 | PartTypeID | TypeName       |
 |------------|----------------|
 | 1          | CPU            |
@@ -27,7 +27,7 @@ PartType Table:
 
 
 
-PART TABLE 
+Part TABLE 
 | PartID | PartName                 | PartTypeID | BrandID | Price | Compatibility       |
 |--------|--------------------------|------------|---------|-------|----------------------|
 | 1      | Intel Core i9-11900K     | 1          | 1       | 600   | Intel compatible     |
@@ -43,7 +43,7 @@ PART TABLE
 
 
 
-Syatem build Table
+System build TABLE
 | BuildID | BuildName               |
 |---------|-------------------------|
 | 301     | Gaming Beast PC         |
@@ -54,7 +54,7 @@ Syatem build Table
 
 
 
-BuildPart Table:
+BuildPart TABLE:
 | BuildPartID | BuildID | PartID |
 |-------------|---------|--------|
 | 14          | 301     | 1      |
