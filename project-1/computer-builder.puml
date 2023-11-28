@@ -1,0 +1,176 @@
+' @startuml
+
+' class Brand {
+'   BrandID : int
+'   BrandName : string
+'   CountryOfOrigin : string
+' }
+
+' class PartType {
+'   PartTypeID : int
+'   TypeName : string
+' }
+
+' class Part {
+'   PartID : int
+'   PartName : string
+'   PartTypeID : int
+'   BrandID : int
+'   Compatibility : string
+'   Price : decimal
+' }
+
+' class CompatibilityMatrix {
+'   CompatibilityID : int
+'   Part1ID : int
+'   Part2ID : int
+'   Compatible : boolean
+' }
+
+' class SystemBuild {
+'   SystemBuildID : int
+'   BuildName : string
+'   DateBuilt : date
+'   TotalPrice : decimal
+' }
+
+' class SystemBuildParts {
+'   BuildPartID : int
+'   SystemBuildID : int
+'   PartID : int
+'   Quantity : int
+' }
+
+' Brand --|{ Part
+' PartType --|{ Part
+' Part --o CompatibilityMatrix
+' SystemBuild --|{ SystemBuildParts
+' Part --|{ SystemBuildParts
+
+' @enduml
+
+
+
+' @startuml
+
+' class Species {
+'   SpeciesID : int
+'   SpeciesName : string
+' }
+
+' class Breed {
+'   BreedID : int
+'   BreedName : string
+'   SpeciesID : int
+'   MixedBreed : boolean
+' }
+
+' class ToyType {
+'   ToyTypeID : int
+'   TypeName : string
+' }
+
+' class Toy {
+'   ToyID : int
+'   ToyName : string
+'   ToyTypeID : int
+'   Price : decimal
+' }
+
+' class Pet {
+'   PetID : int
+'   PetName : string
+'   BreedID : int
+'   Price : decimal
+' }
+
+' Species --|{ Breed
+' Breed --o Pet
+' ToyType --|{ Toy
+' Toy --o Pet
+
+' @enduml
+
+
+
+
+' @startuml
+
+' !define ENTITY class
+' !define PRIMARY_KEY_FIELD -{field}-
+' !define FOREIGN_KEY_FIELD --{field}--
+' !define METHOD {method}
+
+' ' Entities
+' ENTITY Supplier {
+'   +supplier_id: int
+'   supplier_name: string
+'   supplier_contact: string
+'   supplier_address: string
+' }
+
+' ENTITY Ingredient {
+'   +ingredient_id: int
+'   ingredient_name: string
+'   ingredient_type: string
+'   +price_per_unit: float
+' }
+
+' ENTITY Dish {
+'   +dish_id: int
+'   dish_name: string
+'   dish_description: string
+'   +price: float
+' }
+
+' ' Association Table
+' ENTITY DishIngredients {
+'   dish_id: int
+'   ingredient_id: int
+'   +quantity: int
+' }
+
+' ' Relationships
+' Supplier --{ Ingredient : Supplies
+' Ingredient -- Dish : Contains
+' Dish --{ DishIngredients : Includes
+
+' @enduml
+
+
+@startuml
+
+class Brand {
+  BrandID
+  BrandName
+}
+
+class PartType {
+  PartTypeID
+  TypeName
+}
+
+class Part {
+  PartID
+  PartName
+  PartTypeID
+  BrandID
+  Price
+  Compatibility
+}
+
+class SystemBuild {
+  BuildID
+  BuildName
+}
+
+class BuildPart {
+  BuildPartID
+  BuildID
+  PartID
+}
+
+
+
+@enduml
+
