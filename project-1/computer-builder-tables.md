@@ -23,7 +23,19 @@ PartType TABLE:
 | 4          | Storage        |
 | 5          | Motherboard    |
 | 6          | Power Supply   |
-| 7          | Cooling System |
+| 7          | case           |
+
+
+
+
+Compatibility TABLE:
+| CompatibilityID | compatibleWith       |
+|------------|----------------|
+| 1          | Intel            |
+| 2          | AMD            |
+
+
+
 
 
 
@@ -46,11 +58,10 @@ Part TABLE
 System build TABLE
 | BuildID | BuildName               |
 |---------|-------------------------|
-| 301     | Gaming Beast PC         |
-| 302     | Productivity Workstation|
-| 303     | Budget Gaming PC        |
-| 304     | Home Theater PC         |
-| 305     | Compact Mini PC         |
+| 301     | Gaming  PC        |
+| 302     | Productivity pc   |
+| 303     | Budget  PC        |
+| 304     | Home Theater PC   |
 
 
 
