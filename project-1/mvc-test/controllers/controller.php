@@ -29,6 +29,6 @@
         }
     }
 
-    $connection2 = new connectionObject("localhost", "haitham999", "3_To2wv35", "adv_web_demo");
+    $connection2 = new connectionObject("localhost", "...", "...", "adv_web_demo");
     $controller = new Controller($connection2);
 ?>
