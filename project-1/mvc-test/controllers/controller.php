@@ -29,6 +29,19 @@
         }
     }
 
-    $connection2 = new connectionObject("localhost", "...", "...", "adv_web_demo");
+    include_once 'controllers/connection.php';
+    $connection2 = new connectionObject($host, $username, $password, $database);
     $controller = new Controller($connection2);
+
+    // $controller->showUsers();
+    // $controller->showForm();
+    // $controller->add();
+    // if page gets information, add it
+    // otherwise show form
+    // if(isset($_POST['submit'])) {
+    //     $controller->add();
+    // } else {
+    //     $controller->showForm();
+    // }
+
 ?>
