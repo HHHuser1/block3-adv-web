@@ -9,7 +9,7 @@
     <h2>Add Part Type</h2>
 
     <!-- form_add_part_type.php -->
-    <form method="post" action="?action=addPartType">
+    <form method="post" action="">
         <label for="partTypeName">Part Type Name:</label>
         <input type="text" name="partTypeName" required>
         <input type="submit" name="submitPartType" value="Add Part Typee">

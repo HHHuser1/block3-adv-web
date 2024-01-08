@@ -517,7 +517,7 @@ class Controller {
             // Set a session variable for the success message
             $_SESSION['success_message'] = "Added part type: $partTypeName";
     
-            header("Location: index.php");
+            header("Location: ?action=showPartTypeName");
             exit();
         } else {
             echo "<p>Could not add part type</p>";
@@ -541,7 +541,7 @@ class Controller {
                 return;
             } else if ($this->model->insertCompatibility($compatibleWith)) {
                 $_SESSION['success_message'] = "Added compatibility with : $compatibleWith";
-                header("Location: index.php");
+                header("Location: ?action=showCompatibility");
                 exit();
 
             } else {

@@ -142,15 +142,15 @@ echo '</pre>';
         $controller = new Controller($connection2);
 
         // Handle form submissions and actions
-        // if(isset($_POST['submit'])) {
-        //     // $controller->add();
-        // } elseif(isset($_POST['update'])) {
+        if(isset($_POST['submit'])) {
+            // $controller->add();
+        } elseif(isset($_POST['update'])) {
+            $brandID = $_POST['brandID'];
+            $controller->update($brandID);
+        // } elseif(isset($_POST['delete'])) {
         //     $brandID = $_POST['brandID'];
-        //     $controller->update($brandID);
-        // // } elseif(isset($_POST['delete'])) {
-        // //     $brandID = $_POST['brandID'];
-        // //     $controller->deleteBrand($brandID);
-        // // }
+        //     $controller->deleteBrand($brandID);
+        }
 
         // }
 
