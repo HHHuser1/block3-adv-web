@@ -211,7 +211,7 @@ class Controller {
             // echo "<p>Added brand: $brandName, Country of Origin: $countryOfOrigin</p>";
             // $this->showAddForm();
             $_SESSION['success_message'] = "Added brand Name: $brandName, Country of Origin: $countryOfOrigin";
-            header("Location: index.php");
+            header("Location: ?action=showUsers");
             exit();
         } else {
             echo "<p>Could not add brand</p>";
