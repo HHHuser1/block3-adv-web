@@ -20,17 +20,10 @@ class Part {
   Compatibility
 }
 
-class SystemBuild {
-  BuildID
-  BuildName
+class Compatibility {
+  compatibilityID
+  compatibleWith
 }
-
-class BuildPart {
-  BuildPartID
-  BuildID
-  PartID
-}
-
 
 
 @enduml

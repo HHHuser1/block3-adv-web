@@ -54,33 +54,3 @@ Part TABLE
 | 10     | Corsair Hydro Series H100i | 7        | 4       | 120   |                      |
 
 
-
-System build TABLE
-| BuildID | BuildName               |
-|---------|-------------------------|
-| 301     | Gaming  PC        |
-| 302     | Productivity pc   |
-| 303     | Budget  PC        |
-| 304     | Home Theater PC   |
-
-
-
-BuildPart TABLE:
-| BuildPartID | BuildID | PartID |
-|-------------|---------|--------|
-| 14          | 301     | 1      |
-| 15          | 301     | 3      |
-| 16          | 301     | 6      |
-| 17          | 301     | 8      |
-| 18          | 302     | 2      |
-| 19          | 302     | 5      |
-| 20          | 302     | 6      |
-| 21          | 302     | 7      |
-| 22          | 303     | 2      |
-| 23          | 303     | 5      |
-| 24          | 303     | 7      |
-| 25          | 303     | 9      |
-| 26          | 304     | 6      |
-| 27          | 304     | 8      |
-| 28          | 305     | 10     |
-
