@@ -37,3 +37,4 @@ INSERT INTO `parts` (`partID`, `partName`, `partTypeNameID`, `brandID`, `price`,
 
 
 
+

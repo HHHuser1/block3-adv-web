@@ -20,4 +20,6 @@ if ($users) {
     echo "<p>No brands found</p>"; // 'No brands found';
 }
     echo "<p><a href='./index.php'>Home</a></p>";
+
+    
 ?>

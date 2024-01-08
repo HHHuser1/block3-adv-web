@@ -39,6 +39,7 @@ Compatibility TABLE:
 
 
 
+
 Part TABLE 
 | PartID | PartName                 | PartTypeID | BrandID | Price | Compatibility       |
 |--------|--------------------------|------------|---------|-------|----------------------|
