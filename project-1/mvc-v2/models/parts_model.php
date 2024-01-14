@@ -35,10 +35,11 @@ class partsModel {
         $parts = [];
 
         $sql = "SELECT parts.*, partType.partTypeName, brandName.brandName, compatibility.compatibleWith
-                FROM parts
+                FROM parts 
                 JOIN partType ON parts.partTypeNameID = partType.partTypeNameID
                 JOIN brandName ON parts.brandID = brandName.brandID
-                JOIN compatibility ON parts.compatibilityID = compatibility.compatibilityID";
+                JOIN compatibility ON parts.compatibilityID = compatibility.compatibilityID
+                ORDER BY partID DESC"; ;
 
         $mysqli = $this->connect();
         $result = $mysqli->query($sql);
@@ -55,51 +56,112 @@ class partsModel {
     
     }
     ////
-    
+
+
+// keeping this block for reference 
+    // public function getPartByID($partID) {
+    //     $sql = "SELECT * FROM parts WHERE partID = ?";
+    //     $mysqli = $this->connect();
+
+    //     // Use prepared statement
+    //     $stmt = $mysqli->prepare($sql);
+    //     $stmt->bind_param("i", $partID);
+
+    //     // Execute the statement
+    //     $stmt->execute();
+
+    //     // Get the result
+    //     $result = $stmt->get_result();
+
+    //     // Fetch the part
+    //     $part = $result->fetch_assoc();
+
+    //     // Close the statement and connection
+    //     $stmt->close();
+    //     $mysqli->close();
+
+    //     return $part;
+    // }
+
+    ///
+
+
+ ///////////// getPartByID using prepared statements ////////////
+ 
+    // public function getPartByID($partID){
+    //     $sql = "SELECT parts.*, partType.partTypeName, brandName.brandName, compatibility.compatibleWith
+    //         FROM parts
+    //         JOIN partType ON parts.partTypeNameID = partType.partTypeNameID
+    //         JOIN brandName ON parts.brandID = brandName.brandID
+    //         JOIN compatibility ON parts.compatibilityID = compatibility.compatibilityID
+    //         WHERE parts.partID = ?";
+
+    //     $mysqli = $this->connect();
+
+    //     // Use prepared statement
+    //     $stmt = $mysqli->prepare($sql);
+
+    //     if (!$stmt) {
+    //         throw new Exception('Prepare statement error: ' . $mysqli->error);
+    //     }
+
+    //     $stmt->bind_param("i", $partID);
+
+    //     // Execute the statement
+    //     $stmt->execute();
+
+    //     if ($stmt->errno) {
+    //         throw new Exception('Execution error: ' . $stmt->error);
+    //     }
+
+    //     // Get the result
+    //     $result = $stmt->get_result();
+
+    //     if (!$result) {
+    //         throw new Exception('Result retrieval error: ' . $mysqli->error);
+    //     }
+
+    //     // Fetch the part
+    //     $part = $result->fetch_assoc();
+
+    //     // Close the statement and connection
+    //     $stmt->close();
+    //     $mysqli->close();
+
+    //     return $part;
+    // }
+
 
 
     public function getPartByID($partID) {
-        $sql = "SELECT * FROM parts WHERE partID = ?";
-        $mysqli = $this->connect();
-        
-        // Use prepared statement
-        $stmt = $mysqli->prepare($sql);
-        $stmt->bind_param("i", $partID);
-        
-        // Execute the statement
-        $stmt->execute();
-        
-        // Get the result
-        $result = $stmt->get_result();
-        
-        // Fetch the part
-        $part = $result->fetch_assoc();
-        
-        // Close the statement and connection
-        $stmt->close();
-        $mysqli->close();
-        
-        return $part;
+    // Sanitize the partID
+    // $partID = (int)$partID;
+
+    $sql = "SELECT parts.*, partType.partTypeName, brandName.brandName, compatibility.compatibleWith
+            FROM parts
+            JOIN partType ON parts.partTypeNameID = partType.partTypeNameID
+            JOIN brandName ON parts.brandID = brandName.brandID
+            JOIN compatibility ON parts.compatibilityID = compatibility.compatibilityID
+            WHERE parts.partID = $partID";
+
+    $mysqli = $this->connect();
+
+    $result = $mysqli->query($sql);
+
+    if (!$result) {
+        throw new Exception('Query error: ' . $mysqli->error);
     }
 
+    $part = $result->fetch_assoc();
+
+    $mysqli->close();
+
+    return $part;
+}
 
 
-    // public function getPartById($partID)
-    // {
-    //     $sql = "SELECT * FROM parts WHERE partID = ?";
-    //     $stmt = $this->mysqli->prepare($sql);
-    //     $stmt->bind_param("i", $partID);
 
-    //     if ($stmt->execute()) {
-    //         $result = $stmt->get_result();
-    //         $part = $result->fetch_assoc();
-    //         $stmt->close();
 
-    //         return $part;
-    //     } else {
-    //         return false;
-    //     }
-    // }
 
     public function insertPart($partName, $partTypeNameID, $brandID, $price, $compatibilityID)
     {
@@ -111,8 +173,6 @@ class partsModel {
 
         return $result;
     }
-
-    // Add other methods as needed
 
     //////////////////
 
@@ -164,6 +224,15 @@ class partsModel {
         return $result;
     }
 
+    public function deletePart($partID) {
+        $sql = "DELETE FROM parts WHERE partID = $partID";
+
+        $mysqli = $this->connect();
+        $result = $mysqli->query($sql);
+        $mysqli->close();
+
+        return $result;
+    }
 
 
 

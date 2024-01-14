@@ -21,7 +21,7 @@
             error_reporting(E_ALL);
 ?>
 <!-- views/parttypes_show.php -->
-<h2>Part Types</h2>
+<h2>.... PART TYPES ....</h2>
 
 <table border="3">
     <tr>
@@ -34,7 +34,7 @@
             <td><?= $partType['partTypeName'] ?></td>
             <td>
                 <!-- Add an "Edit" button -->
-                <form method="post" action="?action=showUpdatePartTypeForm&partTypeID=<?= $partType['partTypeNameID'] ?>">
+                <form class="table-edit-form" method="post" action="?action=showUpdatePartTypeForm&partTypeID=<?= $partType['partTypeNameID'] ?>">
                     <input type="hidden" name="partTypeID" value="<?= $partType['partTypeNameID'] ?>">
                     <button type="submit" name="update">Update</button>
                 </form>

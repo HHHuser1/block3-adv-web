@@ -81,7 +81,7 @@
     <p>
         <input type="hidden" name="action" value="addPart">
 
-        <input type="submit" name="addPart" value="Add Part">
-        <input type="reset" value="Reset" />
+        <button type="submit" name="addPart" value="Add Part">Add Part</button>
+        <button type="reset" value="Reset" />Reset</button>
     </p>
 </form>

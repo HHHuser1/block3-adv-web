@@ -32,13 +32,12 @@ class BrandController {
         }
         
 
-        // Check if the "show part types" action is requested
         if (isset($_GET['action']) && $_GET['action'] === 'showBrands') {
             $BrandName = $this->brand_model->getBrands();
             $this->showBrands($BrandName);
         }
 
-        // Check if the "add brand" action is requested
+
         if (isset($_GET['action']) && $_GET['action'] === 'showAddBrandForm') {
             $this->showAddBrandForm();
         }
@@ -96,47 +95,12 @@ class BrandController {
             $_SESSION['error_message'] = "Error updating brand.";
         }
 
-        // Redirect back to the index page
         header("Location: ?action=showBrands");
         exit();
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

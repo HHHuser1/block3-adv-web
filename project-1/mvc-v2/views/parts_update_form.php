@@ -14,9 +14,9 @@
 ?>
 
 <!-- views/parts_update_form.php -->
-<h2>Edit Part</h2>
+<h2>Update Part</h2>
 
-<form method="post" action="?action=updatePart">
+<form class="edit-form" method="post" action="?action=updatePart">
     <input type="hidden" name="action" value="updatePart">
     <input type="hidden" name="partID" value="<?= $partID ?>">
     
@@ -57,5 +57,5 @@
     </select><br>
 
     <button type="submit">Update Part</button>
-    <input type="submit" name="cancelUpdate" value="Cancel">
+    <button type="submit" name="cancelUpdate">Cancel</button>
 </form>

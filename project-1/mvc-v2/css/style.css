@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 20px 100px;
+    /* padding: 20px; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* .container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+} */
+
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label{
+    display: block;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+input,
+select,
+option,
+button{
+    padding: 5px;
+    margin: 8px auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    /* box-sizing: border-box; */
+}
+
+
+input[type=text],
+input[type=number]{
+    /* padding: 5px; */
+    background-color: aliceblue;
+    color: black;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px auto;
+    cursor:auto;
+}
+
+button,
+input[type=submit],
+input[type=reset]{
+    margin-right: auto ;
+    margin-left: auto;
+    min-width: 140px;
+    width: 100%;
+    background-color: #D1D1D1;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 12px;
+
+}
+
+/* #delete_button{
+    background-color: #FF5555;
+    color: white;
+} */
+
+p{
+    font-size: 18px;
+    margin: 12px auto;
+}
+a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 18px auto;
+    border-radius: 5px;
+    background-color: lightblue;
+    padding: 8px 14px ;
+    display: inline-flex;
+
+}
+form{
+    max-width: 300px;
+    padding: 0 8px;
+    /* margin-right: auto;
+    margin-left: auto; */
+}
+
+.table-edit-form{
+    max-width: 300px;
+    padding: 0 8px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+}
+
+
+/* .list{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.items{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+} */
+
+ul{
+    list-style-type: none;
+    /* background-color: lightgrey; */
+    /* display: inline-block;
+    padding: 5px; */
+}
+td, th{
+    padding: 4px;
+}
+

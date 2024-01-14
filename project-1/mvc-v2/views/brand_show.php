@@ -24,7 +24,7 @@
 
 
 <!-- views/brands_show.php -->
-<h2>Brands</h2>
+<h2>.... BRANDS ....</h2>
 
 <table border="3">
     <tr>
@@ -36,7 +36,7 @@
         <tr>
             <td><?= $brand['brandName'] ?></td>
             <td>
-                <form method="post" action="?action=showUpdateBrandForm&brandID=<?= $brand['brandID'] ?>">
+                <form class="table-edit-form" method="post" action="?action=showUpdateBrandForm&brandID=<?= $brand['brandID'] ?>">
                     <input type="hidden" name="brandID" value="<?= $brand['brandID'] ?>">
                     <button type="submit" name="update">Update</button>
                 </form>

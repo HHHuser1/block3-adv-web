@@ -54,7 +54,7 @@ class partTypeModel {
         $mysqli = $this->connect();
 
         if ($mysqli) {
-            $query = "SELECT * FROM `partType`";
+            $query = "SELECT * FROM `partType` ORDER BY `partTypeNameID` DESC";
             $result = $mysqli->query($query);
 
             $brands = [];

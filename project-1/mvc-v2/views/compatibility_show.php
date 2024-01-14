@@ -4,11 +4,11 @@
             error_reporting(E_ALL);
 ?>
 <!-- views/compatibility_show.php -->
-<h2>Compatibility</h2>
+<h2>.... COMPATIBILITY ....</h2>
 
 <table border="3">
     <tr>
-        <th>compatibility</th>
+        <th>Compatibility</th>
         <th>Actions</th>
     </tr>
 
@@ -17,7 +17,7 @@
             <td><?= $compatibility['compatibleWith'] ?></td>
             <td>
                 <!-- Add an "Edit" button -->
-                <form method="post" action="?action=showUpdateCompatibilityForm&compatibilityID=<?= $compatibility['compatibilityID'] ?>">
+                <form class="table-edit-form" method="post" action="?action=showUpdateCompatibilityForm&compatibilityID=<?= $compatibility['compatibilityID'] ?>">
                     <input type="hidden" name="compatibilityID" value="<?= $compatibility['compatibilityID'] ?>">
                     <button type="submit" name="update">Update</button>
                 </form>

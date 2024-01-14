@@ -29,5 +29,5 @@
     <label for="compatibleWith">Compatible With:</label>
     <input type="text" name="compatibleWith" value="<?= $compatibility['compatibleWith'] ?>" required>
     <button type="submit">Update Compatibility</button>
-    <input type="submit" name="cancelUpdate" value="Cancel">
+    <button type="submit" name="cancelUpdate">Cancel</button>
 </form>

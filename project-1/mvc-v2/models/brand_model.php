@@ -54,7 +54,7 @@ class brandModel {
         $mysqli = $this->connect();
 
         if ($mysqli) {
-            $query = "SELECT * FROM `brandName`";
+            $query = "SELECT * FROM `brandName` ORDER BY `brandID` DESC";
             $result = $mysqli->query($query);
 
             $brands = [];
@@ -113,33 +113,7 @@ class brandModel {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
 
 
 

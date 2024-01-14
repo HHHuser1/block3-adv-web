@@ -5,9 +5,6 @@
 
 
 
-
-            
-
     include_once 'models/parttype_model.php';
 
     class PartTypeController {
@@ -51,7 +48,6 @@
         }
 
         public function addPartType($partTypeName) {
-            // Perform validation if needed
             $result = $this->parttype_model->insertPartType($partTypeName);
 
             if ($result) {
@@ -59,20 +55,17 @@
             } else {
                 $_SESSION['error_message'] = "Error adding part type.";
             }
-                // Redirect back to the index page
                 header("Location: ?action=showPartTypes");
                 exit();
         }
 
         public function showPartTypes() {
             $partTypes = $this->parttype_model->getPartTypes();
-            // Include the view file to display part types
             include 'views/parttype_show.php';
         }
 
 
         public function showAddPartTypeForm() {
-            // Include the view file to display the add part type form
             include 'views/parttype_add_form.php';
         }
 
@@ -82,7 +75,6 @@
         // Retrieve the part type details from the model
         $partType = $this->parttype_model->getPartTypeNameById($partTypeNameID);
 
-        // Display the edit form
         include 'views/parttype_update_form.php';
         }
 
@@ -100,7 +92,6 @@
             $_SESSION['error_message'] = "Error updating part type.";
             }
 
-            // Redirect back to the index page
             header("Location: index.php?action=showPartTypes");
             exit();
         }

@@ -1,9 +1,9 @@
-<?php 
+<!-- <?php 
 session_start();
 echo '<pre>';
 print_r($_SESSION);
 echo '</pre>';
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,135 +11,34 @@ echo '</pre>';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MVC with MySQL</title>
+    <link rel="stylesheet" href="./css/style.css">
 
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            padding: 20px;
-            /* padding: 20px; */
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        /* .container{
-            max-width: 1200px;
-            width: 90%;
-            margin: 0 auto;
-        } */
-
-        label{
-            display: block;
-            font-size: 16px;
-            margin-top: 5px;
-            margin-bottom: 0px;
-        }
-        input,
-        select,
-        option,
-        button{
-            padding: 5px;
-            margin: 8px auto;
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            font-size: 14px;
-            cursor: pointer;
-            width: 100%;
-            /* box-sizing: border-box; */
-        }
-
-    
-        input[type=text],
-        input[type=number]{
-            padding: 5px;
-            background-color: aliceblue;
-            color: black;
-            font-size: 16px;
-            width: 100%;
-            border-radius: 5px;
-            margin: 10px auto;
-            cursor:auto;
-        }
-        
-        button,
-        input[type=submit],
-        input[type=reset]{
-            width: 50%;
-            min-width: 70px;
-            background-color: #D1D1D1;
-
-        }
-
-        /* #delete_button{
-            background-color: #FF5555;
-            color: white;
-        } */
-
-        p{
-            font-size: 18px;
-            margin: 12px auto;
-        }
-        a{
-            text-decoration: none;
-            text-transform: uppercase;
-            color: black;
-            font-size: 16px;
-            font-weight: bold;
-            margin: 18px auto;
-            border-radius: 5px;
-            background-color: lightblue;
-            padding: 8px 14px ;
-            display: inline-flex;
-
-        }
-        form{
-            max-width: 300px;
-            padding: 10px;
-            
-        }
-
-
-        /* .list{
-            display: grid;
-            grid-gap: 10px;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        }
-        .items{
-            border: 2px solid black;
-            border-radius: 10px;
-            padding: 10px;
-        } */
-
-        ul{
-            list-style-type: none;
-            /* background-color: lightgrey; */
-            /* display: inline-block;
-            padding: 5px; */
-        }
-        td, th{
-            padding: 4px;
-        }
-    </style>
 </head>
 <body>
-    <h1>Project 1 - MVC and mySQL - Computer builder</h1>
-    <p><a href="./index.php">Click here for forms to add Parts, Brands, Types, Compatibility</a></p>
+    
+    <div class="title">
+        <h1>Haitham B</h1>
+        <h1>Project 1 - MVC and mySQL - Computer builder</h1>
+        <p><a href="./index.php">Main Page with Views and Forms</a></p>
+    </div>
     <!-- <a href="?action=showParts">View Parts</a>
     <a href="?action=showUsers">View brands</a>
     <a href="?action=showPartTypeName">View part types</a>
     <a href="?action=showCompatibility">View compatiblities</a> -->
 
-    <a href="?action=showAddBrandForm">Add Brand</a>
-    <a href="?action=showBrands">View Brands</a>
+    <div class="links">
+        <a href="?action=showAddBrandForm">Add Brand</a>
+        <a href="?action=showBrands">View Brands</a>
 
-    <a href="?action=showAddPartTypeForm">Add Part Type</a>
-    <a href="?action=showPartTypes">View part types</a>
+        <a href="?action=showAddPartTypeForm">Add Part Type</a>
+        <a href="?action=showPartTypes">View part types</a>
+    
+        <a href="?action=showAddCompatibilityForm">Add Compatibility</a>
+        <a href="?action=showCompatibility">View Compatibility</a>
 
-    <a href="?action=showAddCompatibilityForm">Add Compatibility</a>
-    <a href="?action=showCompatibility">View Compatibility</a>
-
-    <a href="?action=showAddPartsForm">Add Parts</a>
-    <a href="?action=showParts">View Parts</a>
-
+        <a href="?action=showAddPartsForm">Add Parts</a>
+        <a href="?action=showParts">View Parts</a>
+    </div>
 
 
 
@@ -222,28 +121,9 @@ echo '</pre>';
         //     $controller->updateBrand($brandID, $brandName);
         // }
 
-
-
-
-
-
         
         // Display brands
         // $brand_controller->showBrands();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -275,10 +155,6 @@ echo '</pre>';
             //     echo '<p style="color: green; font-size: 24px; font-weight: bold">' . $_SESSION['success_message'] . '</p>';
             //     unset($_SESSION['success_message']); // Clear the message to avoid displaying it on subsequent requests
             // }
-
-
-            
-
 
 
 

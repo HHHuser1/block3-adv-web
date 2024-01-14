@@ -19,7 +19,7 @@
     
 
         public function handleRequest() {
-            // Check if the "add part" action is requested
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'addPart') {
                 $this->addPart($_POST);
             }
@@ -45,7 +45,88 @@
                 $partID = $_GET['partID'];
                 $this->showUpdatePartForm($partID);
             }
+
+            // if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+            //     $partID = $_POST['partID'];
+            //     $this->deletePart($partID);
+            // }
+
+   
+            // if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['action']) && $_GET['action'] === 'deletePart') {
+            //     $partID = $_GET['partID'];
+            //     $this->deletePart($partID);
+            // }
+            
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['action']) && $_GET['action'] === 'deletePart') {
+                $partID = $_POST['partID'];
+            
+                // Perform the deletion
+                $this->deletePart($partID);
+                $_SESSION['success_message'] = 'Part deleted successfully';
+                header('Location: ?action=showParts');
+                exit;
+            }
+
+            // Check if the "confirm delete" action is requested
+            if (isset($_GET['action']) && $_GET['action'] === 'confirmDeletePart') {
+                $partID = $_GET['partID'];
+
+                // Fetch part details based on partID
+                $partDetails = $this->parts_model->getPartByID($partID);
+
+                if (!$partDetails) {
+                    echo 'Part details not found.';
+                    exit;
+                }
+
+                // Display a confirmation message and form
+                echo "<div style='color: red; font-weight: bold; font-size: 18px'> Are you sure you want to delete  <br>
+                <p>Part ID: {$partID}</p>
+                <p>Part Name: '{$partDetails['partName']}' </p>
+                <p>Part Type: '{$partDetails['partTypeName']}' </p>
+                <p>Brand Name: '{$partDetails['brandName']}' </p>
+                <p>Price:  $'{$partDetails['price']}' </p>
+                <p>Compatible with: '{$partDetails['compatibleWith']}'?</p></div>"; 
+                echo '<form method="post" action="?action=deletePart&partID=' . $partID . '"><input type="hidden" name="partID" value="' . $partID . '"><button type="submit" name="delete">Yes, Delete</button> <br> <button type="submit" name="cancelDelete">Cancel</button></form>';
+                exit;
+
+                // <input type='hidden' name='partID' value='{$partID}'>
+                //     <div style='color: red; font-weight: bold; font-size: 18px'>
+                //     <p>Are you sure you want to delete this part?</p>
+                //     <p>Part ID: {$partID}</p>
+                //     <p>Part Name: {$partDetails['partName']}</p>
+                //     <p>Part Type: {$partTypeName}</p>
+                //     <p>Brand Name: {$brandName}</p>
+                //     <p>Price: $ {$partDetails['price']}</p>                    
+                //     <p>Compatibility: {$compatibleWith}</p>
+                //     </div>
+
+                
+                // echo "Are you sure you want to delete '{$partDetails['partName']}' of '{$partDetails['partTypeName']}' from '{$partDetails['brandName']}' at '{$partDetails['price']}' and compatible with '{$partDetails['compatibleWith']}'?";
+                // echo '<form method="post" action="?action=deletePart&partID=' . $partID . '"><input type="hidden" name="partID" value="' . $partID . '"><button type="submit" name="delete">Yes, Delete</button></form>';
+                // exit;
+            }
+
         }
+
+
+        public function deletePart($partID) {
+            if  ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cancelDelete'])) {
+                header('Location: ?action=showParts');
+                exit;
+            }
+            if ($this->parts_model->deletePart($partID)) {
+                // Success message or redirect to showParts
+                $_SESSION['success_message'] = 'Part deleted successfully';
+                header('Location: ?action=showParts');
+            } else {
+
+                echo 'Error deleting part.';
+            }
+        }
+
+
 
         public function showUpdatePartForm($partID) {
             $partDetails = $this->parts_model->getPartByID($partID);
@@ -78,11 +159,9 @@
             $compatibilityID = $postData['compatibilityID'];
     
             if ($this->parts_model->insertPart($partName, $partTypeNameID, $brandID, $price, $compatibilityID)) {
-                // Success message or redirect to showParts
                 $_SESSION['success_message'] = 'Part added successfully';
                 header('Location: ?action=showParts');
             } else {
-                // Error handling
                 echo 'Error adding part.';
             }
         }
@@ -110,12 +189,11 @@
             $partDetails = $this->parts_model->getPartByID($partID);
         
             if (!$partDetails) {
-                // Handle the case when part details are not found
                 echo 'Part details not found.';
                 return;
             }
         
-            // Now you can use $partDetails to set default values
+            // Use $partDetails to set default values
             $partName = $partDetails['partName'];
             $partTypeNameID = $partDetails['partTypeNameID'];
             $brandID = $partDetails['brandID'];
@@ -143,13 +221,12 @@
                 $compatibilityID = $_POST['compatibilityID'];
             }
         
-            // Call the updatePart method in parts_model
             if ($this->parts_model->updatePart($partID, $partName, $partTypeNameID, $brandID, $price, $compatibilityID)) {
                 // Success message or redirect to showParts
                 $_SESSION['success_message'] = 'Part updated successfully';
                 header('Location: ?action=showParts');
             } else {
-                // Error handling
+
                 echo 'Error updating part.';
             }
 

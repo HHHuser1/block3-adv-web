@@ -4,7 +4,6 @@
     error_reporting(E_ALL);
 
 
-// compatibility_controller.php
 include_once 'models/compatibility_model.php';
 
 class CompatibilityController {

@@ -12,6 +12,6 @@
     <label for="partTypeName">Part Type Name:</label>
     <input type="text" name="partTypeName" value="<?= $partType['partTypeName'] ?>" required>
     <button type="submit">Update Part Type</button>
-    <input type="submit" name="cancelUpdate" value="Cancel"></input>
+    <button type="submit" name="cancelUpdate">Cancel</button>
 </form>
 

@@ -6,7 +6,7 @@
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
 ?>
-<h2>.... PARTS ....</h2>
+
 <!-- <?php if ($parts): ?>
     <table border="3">
         <thead>
@@ -52,11 +52,13 @@
 
 
 <!-- views/parts_show.php -->
-<h2>Parts</h2>
 
+<h2>.... PARTS ....</h2>
 <table border="3">
+    
     <?php if ($parts): ?>
     <tr>
+        <th>Part ID</th>
         <th>Part Name</th>
         <th>Part Type</th>
         <th>Brand</th>
@@ -67,6 +69,7 @@
 
     <?php foreach ($parts as $part): ?>
         <tr>
+                    <td><?php echo $part['partID']; ?></td>
                     <td><?php echo $part['partName']; ?></td>
                     <td><?php echo $part['partTypeName']; ?></td>
                     <td><?php echo $part['brandName']; ?></td>
@@ -74,10 +77,21 @@
                     <td><?php echo $part['compatibleWith']; ?></td>
             <td>
                 <!-- Add an "Edit" button --> 
-                <form method="post" action="?action=showUpdatePartForm&partID=<?= $part['partID'] ?>">
+                <form class="table-edit-form" method="post" action="?action=showUpdatePartForm&partID=<?= $part['partID'] ?>">
                     <!-- <input type="hidden" name="partID" value="<?= $part['partID'] ?>"> -->
                     <button type="submit" name="update">Update</button>
                 </form>
+
+                <form class="table-edit-form" method="post" action="?action=confirmDeletePart&partID=<?= $part['partID'] ?>">
+                    <!-- <input type="hidden" name="partID" value="<?= $part['partID'] ?>"> -->
+                    <button type="submit" name="delete" >Delete</button>
+                </form>
+
+                <!-- <form method="post" action="?action=deletePart&partID=<?php echo $part['partID'] ?>">
+                    <input type="hidden" name="action" value="deletePart">
+                    <input type="hidden" name="partID" value="<?php echo $part['partID'] ?>">
+                    <button type="submit" name="delete">Delete</button>
+                </form> -->
             </td>
         </tr>
     <?php endforeach; ?>
