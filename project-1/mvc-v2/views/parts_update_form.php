@@ -3,14 +3,12 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    // Assuming $partDetails is an array with part details
     $partName = isset($partDetails['partName']) ? $partDetails['partName'] : '';
     $partTypeNameID = isset($partDetails['partTypeNameID']) ? $partDetails['partTypeNameID'] : '';
     $brandID = isset($partDetails['brandID']) ? $partDetails['brandID'] : '';
     $price = isset($partDetails['price']) ? $partDetails['price'] : '';
     $compatibilityID = isset($partDetails['compatibilityID']) ? $partDetails['compatibilityID'] : '';
 
-    // Assuming $partTypeNames, $brands, and $compatibleWith are arrays with data for dropdowns
 ?>
 
 <!-- views/parts_update_form.php -->

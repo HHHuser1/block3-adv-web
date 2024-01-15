@@ -1,19 +1,4 @@
-<!-- views/parttypes_show.php -->
-<!-- <h2>Part Types</h2>
 
-<table border="1">
-    <tr>
-        <th>Part Type ID</th>
-        <th>Part Type Name</th>
-    </tr>
-
-    <?php foreach ($partTypes as $partType): ?>
-        <tr>
-            <td><?= $partType['partTypeNameID'] ?></td>
-            <td><?= $partType['partTypeName'] ?></td>
-        </tr>
-    <?php endforeach; ?>
-</table> -->
 
 <?php
             ini_set('display_errors', 1);

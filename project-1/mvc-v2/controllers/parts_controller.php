@@ -184,7 +184,7 @@
                 header("Location: ?action=showParts");
                 exit();
             }
-            // Assuming you have a method in parts_model to fetch part details by ID
+
             $partID = $_POST['partID'];
             $partDetails = $this->parts_model->getPartByID($partID);
         
@@ -222,16 +222,13 @@
             }
         
             if ($this->parts_model->updatePart($partID, $partName, $partTypeNameID, $brandID, $price, $compatibilityID)) {
-                // Success message or redirect to showParts
+                
                 $_SESSION['success_message'] = 'Part updated successfully';
                 header('Location: ?action=showParts');
             } else {
 
                 echo 'Error updating part.';
             }
-
-
-
 
         }
 }
