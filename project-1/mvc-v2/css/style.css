@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body{
-    padding: 20px 100px;
+    padding: 20px 60px;
     /* padding: 20px; */
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -130,3 +130,10 @@ td, th{
     padding: 4px;
 }
 
+.banner{
+    background-image: url(../img/parts_2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    /* width: 100%; */
+}
