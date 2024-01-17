@@ -67,10 +67,10 @@ input[type=reset]{
 
 }
 
-/* #delete_button{
-    background-color: #FF5555;
+#delete_button{
+    background-color: #ff0505;
     color: white;
-} */
+}
 
 p{
     font-size: 18px;

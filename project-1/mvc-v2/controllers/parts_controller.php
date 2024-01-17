@@ -81,14 +81,14 @@
                 }
 
                 // Display a confirmation message and form
-                echo "<div style='color: red; font-weight: bold; font-size: 18px'> Are you sure you want to delete  <br>
+                echo "<div style='color: blue; font-weight: bold; font-size: 18px'> Are you sure you want to delete  <br>
                 <p>Part ID: {$partID}</p>
                 <p>Part Name: '{$partDetails['partName']}' </p>
                 <p>Part Type: '{$partDetails['partTypeName']}' </p>
                 <p>Brand Name: '{$partDetails['brandName']}' </p>
                 <p>Price:  $'{$partDetails['price']}' </p>
                 <p>Compatible with: '{$partDetails['compatibleWith']}'?</p></div>"; 
-                echo '<form method="post" action="?action=deletePart&partID=' . $partID . '"><input type="hidden" name="partID" value="' . $partID . '"><button type="submit" name="delete">Yes, Delete</button> <br> <button type="submit" name="cancelDelete">Cancel</button></form>';
+                echo '<form method="post" action="?action=deletePart&partID=' . $partID . '"><input type="hidden" name="partID" value="' . $partID . '"><button id="delete_button" type="submit" name="delete">Yes, Delete</button> <br> <button type="submit" name="cancelDelete">Cancel</button></form>';
                 exit;
 
                 // <input type='hidden' name='partID' value='{$partID}'>
