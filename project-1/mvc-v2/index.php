@@ -20,7 +20,16 @@ echo '</pre>';
         <div class="banner"></div>
         <h1>Haitham B</h1>
         <h1>Project 1 - MVC and mySQL - Computer builder</h1>
-        <p><a href="./index.php">Main Page with Views and Forms</a></p>
+        <!-- <p><a href="./index.php">Main Page with Views and Forms</a></p> -->
+        <div class="login-box">
+            <p><a href="./index.php">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Main Page with Views and Forms
+            </p></a>
+        </div>
         
     </div>
 
